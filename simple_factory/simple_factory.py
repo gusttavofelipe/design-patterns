@@ -34,29 +34,29 @@ class Vehicle(ABC): # Product (molde)
         ...
 
 
-class LuxuryCar(Vehicle): # ConcretProduct1 (feito do molde)
+class LuxuryCar(Vehicle): # ConcreteProduct1 (feito do molde)
     def  get_client(self) -> None:
-        print('Luxury car is goin to customer...')
+        print('Luxury car went to pick up the customer...')
 
 
-class PopularCar(Vehicle): # ConcretProduct2 (feito do molde)
+class PopularCar(Vehicle): # ConcreteProduct2 (feito do molde)
     def  get_client(self) -> None:
-        print('Popular car is goin to customer...')
+        print('Popular car went to pick up the customer...')
 
 
-class PopularMotorbike(Vehicle): # ConcretProduct3 (feito do molde)
+class PopularMotorbike(Vehicle): # ConcreteProduct3 (feito do molde)
     def  get_client(self) -> None:
-        print('Popular Motorbike is goin to customer...')
+        print('Popular Motorbike went to pick up the customer...')
 
 
-class LuxuryMotorbike(Vehicle): # ConcretProduct3 (feito do molde)
+class LuxuryMotorbike(Vehicle): # ConcreteProduct4 (feito do molde)
     def  get_client(self) -> None:
-        print('Luxury motorbike is goin to customer...')
+        print('Luxury motorbike went to pick up the customer...')
 
 
 class VehicleFactory: # Simple Factory 
     @staticmethod
-    def get_car(type: str) -> Vehicle:
+    def get_vehicle(type: str) -> Vehicle:
         if type == 'lux_car':
             return LuxuryCar()
         if type == 'popular_car':
@@ -68,16 +68,16 @@ class VehicleFactory: # Simple Factory
         assert 0, 'Vehicle doesnt exists'
 
 
-if __name__ == ('__main__'): # Client code
+if __name__ == ('__main__'): # Client code:
     available_vehicles = [
         'lux_car', 'popular_car',
         'popular_motorbike', 'lux_motorbike'
         ]
 
-    car = VehicleFactory.get_car(available_vehicles[0])
+    car = VehicleFactory.get_vehicle(available_vehicles[0])
     car.get_client()
 
     for i in range(10):
-        car = VehicleFactory.get_car(choice(available_vehicles))
+        car = VehicleFactory.get_vehicle(choice(available_vehicles))
         car.get_client()
   
