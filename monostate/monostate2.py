@@ -8,7 +8,7 @@ class StringReprMixim:
 
 
     def __repr__(self) -> str:
-        return self.__str__
+        return self.__str__()
 
 
 class MonoState(StringReprMixim):
