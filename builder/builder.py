@@ -38,7 +38,7 @@ class User(StringReprMixim): # Product
 class IUserBuilder(ABC): # Builder
     @property
     @abstractmethod
-    def result():...
+    def result(self):...
 
 
     @abstractmethod
